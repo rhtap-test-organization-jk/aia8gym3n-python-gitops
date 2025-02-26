@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: aia8gym3n-python-gitops
+  description: This is GitOps manifest for aia8gym3n-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=aia8gym3n-python
+    backstage.io/kubernetes-id: aia8gym3n-python 
+    backstage.io/techdocs-ref: dir:. 
+    jenkins.io/job-full-name: aia8gym3n-python-gitops   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:aia8gym3n-python
